@@ -244,8 +244,5 @@ WHERE
 zpu."Zone" = 'Astoria'
 order by 3 desc limit 1
 
-
-  t."PULocationID" = zpu."LocationID" AND
-  t."DOLocationID" = zdo."LocationID" limit 10
  ```
  

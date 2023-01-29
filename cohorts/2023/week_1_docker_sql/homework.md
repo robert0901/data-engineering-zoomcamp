@@ -19,7 +19,7 @@ Which tag has the following text? - *Write the image ID to the file*
 - `--idimage string`
 - `--idfile string`
 ## Solution
-``` 
+```docker
 docker build --help
 --iidfile string Write the image ID to the file
 ```
@@ -31,7 +31,7 @@ How many python packages/modules are installed?
 
 - 1
 - 6
-<mark>-3<mark>
+- ~~3~~
 - 7
 ## Solution
 ```
@@ -60,7 +60,7 @@ Download this data and put it into Postgres (with jupyter notebooks or with a pi
 
 ## Solution
 ## Reused Ingestion File
-```
+```python
 import os
 import argparse
 
@@ -168,12 +168,12 @@ Tip: started and finished on 2019-01-15.
 Remember that `lpep_pickup_datetime` and `lpep_dropoff_datetime` columns are in the format timestamp (date and hour+min+sec) and not in date.
 
 - 20689
-<mark>-20530<mark>
+- ~~20530~~
 - 17630
 - 21090
 
 ## Solution
-```
+```SQL
 /*How many trips on 2019-01=15? */
 select count(*) from green_taxi_trips WHERE
 lpep_pickup_datetime >='2019-01-15 00:00:00'::timestamp and 
@@ -188,10 +188,10 @@ Use the pick up time for your calculations.
 
 - 2019-01-18
 - 2019-01-28
-<mark>- 2019-01-15<mark>
+- ~~2019-01-15~~
 - 2019-01-10
 ## Solution
-```
+```SQL
  SELECT date(lpep_pickup_datetime) as pick_up_date, max(trip_distance) as max_trip_distance
 FROM   green_taxi_trips
 group by 1
@@ -204,11 +204,11 @@ In 2019-01-01 how many trips had 2 and 3 passengers?
  
 - 2: 1282 ; 3: 266
 - 2: 1532 ; 3: 126
-<mark>- 2: 1282 ; 3: 254<mark>
+- ~~2: 1282 ; 3: 254~~
 - 2: 1282 ; 3: 274
 
 ## Solution
-```
+```SQL
  /*In 2019-01-01 how many trips had 2 and 3 passengers? */
 
 SELECT sum(case when passenger_count = 2 then 1 else 0 end) as Two_Passenger,
@@ -226,9 +226,9 @@ Note: it's not a typo, it's `tip` , not `trip`
 - Central Park
 - Jamaica
 - South Ozone Park
-<mark>- Long Island City/Queens Plaza<mark>
+- ~~Long Island City/Queens Plaza
  
- ```
+ ```SQL
  /*Largest tip */
 SELECT 
 zpu."Zone" as Pick_Up_Zone,
@@ -249,16 +249,3 @@ order by 3 desc limit 1
   t."DOLocationID" = zdo."LocationID" limit 10
  ```
  
-
-
-## Submitting the solutions
-
-* Form for submitting: [form](https://forms.gle/EjphSkR1b3nsdojv7)
-* You can submit your homework multiple times. In this case, only the last submission will be used. 
-
-Deadline: 30 January (Monday), 22:00 CET
-
-
-## Solution
-
-We will publish the solution here
